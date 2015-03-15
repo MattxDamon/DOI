@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,6 +8,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
 	<script src="script.js"></script>
 </head>
 
@@ -129,7 +131,7 @@
 					</select>
 				</div>
 				<div class="contPrevbtns">
-					<button type="button" id="downloadBtn" class="cont btn btn-default" onclick="finalMessageDisplay()">Sign Up for Download</button>
+					<button type="button" id="downloadBtn" class="cont btn btn-default" onclick="endTimer(); finalMessageDisplay(); sendData();">Sign Up for Download</button>
 				</div>
 			</div>
 		</div>
@@ -141,7 +143,7 @@
 				<hr>
 				<h3>Enter your valid beta key to download the demo:</h3>
 				<p>Available for both PC and Macintosh</p>
-				<input type="text" class="form-control betakey center" placeholder="Valid Beta Key" aria-describedby="basic-addon1">
+				<input type="text" class="form-control betaKey center" placeholder="Valid Beta Key" aria-describedby="basic-addon1">
 				<h4 id="invalidKey">Invalid Beta Key</h4>
 				<a onclick="invalidKey()"><img id="downloadIcon" src="images/download_image.png"></a>
 			</div>
@@ -175,7 +177,7 @@
 					<p>A real purhacse is also required in order to customize company trucks. The trucks will appear customized in the paying player's dashboard, other players will see the customized trucks of the paying player, and the trucks will increase brand awareness of the paying players company in the mind of virtual consumers.</p>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeDivs()">I Understand the Risk of Hidden Costs</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeDivs(); setTimer();">I Understand the Risk of Hidden Costs</button>
 	      </div>
 	    </div>
 	  </div>
@@ -197,7 +199,7 @@
 					 
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">I Understand</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal" onclick='changeDivs(); setTimer();'>I Understand</button>
 	      </div>
 	    </div>
 	  </div>

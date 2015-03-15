@@ -1,3 +1,7 @@
+/* DOI CSS MAIN */
+
+
+/* General */
 *{
 	font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -27,6 +31,8 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
+/* Top Logo/Title */
 
 .logocontainer{
 	margin-top:10%;
@@ -61,6 +67,7 @@
 }
 .lure{
 	color:white;
+	margin-top:2%;
 }
 .lure h1{
 	margin:0px;
@@ -77,7 +84,7 @@
 
 
 
-/*features tab*/
+/* Features Tab */
 .container-inner .row{
 	width:80%;
 }
@@ -85,7 +92,7 @@
 	margin-top:5px;
 	font-size:25px;
 	opacity: .98;
-	height:40%;
+	height:325px;
 	background-color:#D6C9A7;
 	border-radius:20px;
 	margin-bottom:5px;
@@ -131,7 +138,7 @@ ul
 
 
 
-/*Self-Investment CSS*/
+/* Self-Investment */
 .customizations{
 	background-color: #CFCAC6;
 	border-radius: 10px;
@@ -172,12 +179,12 @@ ul
 	margin-top:3px;
 }
 
-/*Warnings*/
+/* Warnings */
 .modal-body p{
 	font-size:20px;
 }
 
-/*Signup*/
+/* Signup */
 .final_signup{
 	display:none;
 }
@@ -193,7 +200,7 @@ ul
 	border-radius: 10px;
 }
 
-/*Download Links & Rating*/
+/* Download Link & Rating */
 
 .testCodes{
 	margin-bottom:0px;
@@ -222,7 +229,7 @@ ul
 /*mobile styling*/
 @media (max-width: 765px){
 	.features{
-		height:80%;
+		height:85%;
 	}
 }
 @media (max-width: 500px) {
@@ -256,6 +263,6 @@ ul
 			margin-left:10%;
 		}
 		.features{
-			height:85%;
+			height:90%;
 		}
 	}
