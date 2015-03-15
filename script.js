@@ -3,8 +3,7 @@
 
 // Firebase Functions
 
-var ref= "https://dawn-of-industry.firebaseio.com";
-var usersRef = ref.child("visitors");
+var ref= new Firebase("https://dawn-of-industry.firebaseio.com/visitors");
 
 var userName;
 var timerStart;
@@ -19,20 +18,20 @@ var experience;
 var experience_num;
 
 function setTimer(){
-	timerStart=getTime();
+	timerStart=new Date().getTime();
 }
 function endTimer(){
-	timerEnd=getTime();
+	timerEnd=new Date().getTime();
 	hesitationTime=timerEnd-timerStart;
 }
 
 
 function sendData(){
-	usersRef.push({
+	ref.push({
 		experience: experience_num,
 	    email: userEmail,
-	    legalview: legview,
-	    regview: regview,
+	    legalview: legView,
+	    regview: regView,
 	    selfcust: selfCust,
 	    hesitation: hesitationTime,
 	    username: userName
@@ -45,30 +44,6 @@ function sendData(){
 
 $(document).ready(function(){
 
-//Code for determining the experience
-	experience=Math.random();
-
-	if(experience<.25){
-		$('#self_ident').remove();
-		$('contBtn').prop('data-target','#legModal');
-		experience_num=1;
-	}
-	if((experience>.25)&&(experience<.5)){
-		$('#self_ident').remove();
-		$('contBtn').prop('data-target','#regModal');
-		experience_num=2;
-	}
-	if((experience>.5)&&(experience<.75)){
-		$('contBtn').prop('data-target','#legModal');
-		experience_num=3;	
-	}
-	if(experience>.75){
-		$('contBtn').prop('data-target','#regModal');
-		experience_num=4;	
-	}
-
-
-
 	//General css manipulation
 		$('#contBtn').prop('disabled', true);
 		$('#downloadBtn').prop('disabled', true);
@@ -76,6 +51,42 @@ $(document).ready(function(){
 		$('#compSlogan').val('');
 		$('#userName').val('');
 		$('#compEmail').val('');
+
+//Code for determining the experience
+	experience=Math.random();
+
+	if(experience<.25){
+		$('#custRemove').remove();
+		$('#contBtn').prop('disabled', false);
+		$('#contBtn').attr('data-target','#legModal');
+		experience_num=1;
+		selfCust=false;
+		legView=true;
+		regView=false;
+	}
+	if((experience>.25)&&(experience<.5)){
+		$('#custRemove').remove();
+		$('#contBtn').prop('disabled', false);
+		$('#contBtn').attr('data-target','#regModal');
+		experience_num=2;
+		selfCust=false;
+		regView=true;
+		legView=false;
+	}
+	if((experience>.5)&&(experience<.75)){
+		$('#contBtn').attr('data-target','#legModal');
+		experience_num=3;
+		selfCust=true;
+		regView=false;
+		legView=true;
+	}
+	if(experience>.75){
+		$('#contBtn').attr('data-target','#regModal');
+		experience_num=4;	
+		selfCust=true;
+		regView=true;
+		legView=false;
+	}
 
 	//button enabling
 	$('.customizations').change(function()	{
@@ -92,11 +103,11 @@ $(document).ready(function(){
 
 	//setting db refs and checking email
 	$('#userName').change(function()	{
-		userEmail=$(this).val();
+		userName=$(this).val();
 	});
 
 	$('#userEmail').change(function()	{
-		userName=$(this).val();
+		userEmail=$(this).val();
 		//$('#downloadBtn').prop('disabled', true);
 	});
 
