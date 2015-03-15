@@ -1,0 +1,208 @@
+<html>
+
+<head>
+<script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+</head>
+
+<body class="everything">
+<div class="container">
+		<!--Logo Row-->
+
+		<div class="row">
+			<div class="logocontainer col-md-9 col-centered center">
+				<img class="mainlogo" src="images/DOIActual.png">
+			</div>	
+		</div>
+
+				<!--Signup Complete Row-->
+		<div class="row" id="sign_comp">
+			<div class="col-md-10 col-centered signcomp center">
+				<h3>Thank You for Signing Up for Dawn of Industry</h3>
+				<p>You will be sent an email by April 25th after the one-week sign up period is over. In this email you may be invited to play the beta version of Dawn of Industry.</p>
+				<p>For questions or concerns please email: concerns_irb@skidmore.edu</p>
+			</div>
+		</div>
+
+		<!--Title Row-->
+		<div class="row" id="desc">
+			<div class="lure center">
+				<h1>The Real Time Business Strategy Game</h1>
+				<h2>Play for free with your classmates</h2>
+				<img class="skidLogo" src="images/skid_logo.png">
+			</div>
+		</div>
+
+		<!--Features Row-->
+		<div class="row" id="features">
+			<div class="col-md-10 features col-centered">
+
+				<div id="ind" class="col-md-6 col-sm-6">
+					<h2>Invest In Industries...</h2>
+		 			<ul>
+		 				<li>Agriculture</li>
+		 				<li>Coal</li>
+		 				<li>Oil</li>
+		 				<li>Railroads</li>
+		 				<li>Steel</li>
+		 				<li>Real Estate</li>
+		 				<li>Invest In New Technology, Rewrite History!</li>
+		 			</ul>
+		 		</div> 				
+		 		<div id="mng" class="col-md-6 col-sm-6">
+	 				<h2>Manage Your Business...</h2>
+	 					<ul>
+			 				<li>Hire Your Managerial Staff</li>
+			 				<li>Influence Political Legislation</li>
+			 				<li>Navigate Legal Obstacles</li>
+			 				<li>Continue Investing or Distribute to Shareholders</li>
+			 				<li>Set Prices and Negotiate with Unions</li>
+			 				<li>Become Rivals or Partners With Your Classmates</li>
+			 				<li>Build Real Business Skills!</li>
+			 			</ul>
+			 	</div>
+			</div>
+		</div>
+
+
+		<!--Self-Investment Container-->
+		<div class="row" id="self_ident">
+			<div class="customizations col-md-10 col-centered center">
+					<h1>Get Started Building Your Company</h1>
+					<div id="custRemove">
+						<div class="customs">
+							<select class="styleselect" id="industrySel">
+								  <option value="default">Starting Industry...</option>
+								  <option value="electricity">Agriculture</option>
+								  <option value="oil">Oil</option>
+								  <option value="auto">Coal</option>
+								  <option value="railroads">Railroads</option>
+								  <option value="steel">Steel</option>
+								  <option value="realestate">Real Estate</option>
+							</select>
+						</div>
+						<div class="customs">
+							<input type="text" id="compName" class="compcust form-control" placeholder="Company Name (LLC)" aria-describedby="basic-addon1">
+						</div>
+						<div class="customs">
+							<input type="text" id="compSlogan" class="compcust form-control" placeholder="Company Slogan" aria-describedby="basic-addon1">
+						</div>						
+						<div class="customs">
+							<select class="styleselect" id="officeSel">
+								  <option value="default">Office Location...</option>
+								  <option value="pittsburg">Pittsburg, PA</option>
+								  <option value="nyc">New York, NY</option>
+								  <option value="boston">Boston, MA</option>
+								  <option value="chicago">Chicago, IL</option>
+								  <option value="richmond">Richmond, VA</option>
+								  <option value="sanfran">San Francisco, CA</option>
+								  <option value="austin">Austin, TX</option>
+							</select>
+						</div>
+					</div>
+					<!--What Stays When Cust Removed-->
+					<div class="contPrevbtns">
+						<button type="button" class="cont btn btn-default" id="contBtn" data-toggle="modal" data-target="#regModal">Continue For Download</button>
+					</div>
+			</div>
+		</div>
+
+		<!--Final Signup Container-->
+		<div class="row final_signup" id="finSignup">
+			<div class="finalSignup col-md-10 col-centered center">
+				<h1>Sign Up Now</h1>
+				<div class="customs">
+						<input type="text" id="userName" class="compcust form-control" placeholder="Desired Username" aria-describedby="basic-addon1">
+					</div>
+				<div class="customs">
+						<input type="text" id="userEmail" class="compcust form-control" placeholder="School Email" aria-describedby="basic-addon1">
+				</div>
+				<div class="customs">
+					<select class="styleselect" id="institutionSel">
+								  <option value="default">Select Your Institution...</option>
+								  <option value="skidmore">Skidmore College</option>
+					</select>
+				</div>
+				<div class="contPrevbtns">
+					<button type="button" id="downloadBtn" class="cont btn btn-default" onclick="finalMessageDisplay()">Sign Up for Download</button>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Beta Key Row-->
+		<div class="row center" id="beta">
+			<div class="testCodes center col-centered">
+				<hr>
+				<h3>Enter your valid beta key to download the demo:</h3>
+				<p>Available for both PC and Macintosh</p>
+				<input type="text" class="form-control betakey center" placeholder="Valid Beta Key" aria-describedby="basic-addon1">
+				<h4 id="invalidKey">Invalid Beta Key</h4>
+				<a onclick="invalidKey()"><img id="downloadIcon" src="images/download_image.png"></a>
+			</div>
+		</div>
+
+		<!--Rating Row-->
+		<div class="row" id="ratings">
+			<img class="ratings" src="images/fake_rating.gif">
+			</div>
+		</div>
+
+
+</div>
+
+		<!-- ModalReg -->
+	<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+	        <h1 class="modal-title" id="myModalLabel">WARNING</h1>
+	      </div>
+	      <div class="modal-body">
+	      		<h3>General:</h3>
+					<p>Before downloading this game players must be aware that gameplay may result in previously unanticipated purchases. Although Dawn of Industry is free to play, there are in game purchases that will tempt the player to purchase virtual items. These purchases are useless outside of gameplay. Please see the details below for the digital items players will be tempted to purchase using real currency.</p>
+					 
+					 
+					<h3>Detailed:</h3>
+					<p>Players will feel the deisre to use real money to purchase items that will impress politicians, giving the player political influence. The political influence can be used to support laws or taxes that allow for the player to keep more of his or her virtual profits.</p>
+					 
+					<p>A real purhacse is also required in order to customize company trucks. The trucks will appear customized in the paying player's dashboard, other players will see the customized trucks of the paying player, and the trucks will increase brand awareness of the paying players company in the mind of virtual consumers.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeDivs()">I Understand the Risk of Hidden Costs</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- ModalLeg -->
+	<div class="modal fade" id="legModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+	        <h1 class="modal-title" id="myModalLabel">Legal Disclaimer</h1>
+	      </div>
+	      <div class="modal-body">
+	      		<h3>General:</h3>
+					<p>The legal features in Dawn of Industry are taken from real world scenarios but aren't meant to simulate legal procedings in reality. Players will be experience a virtual version of US Law, that does not represent the views of politicians or lawmakers in the Unitied States as of 2015. The views of lawmaking officials and the laws that exist in the game are based on historic events, but are not historically accurate.</p>
+					 
+					<p>Politcal views expressed by politicians in the game are based on historic events but are not accurate representations of the the views actually held by historic politicians. Dawn of Industry is not meant to be an historically accurate representation of the history of politics. The creators of this game do not necessarily hold the political views or believe in the political outcomes that occur in game scenarios.</p>
+					 
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">I Understand</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+</body>
+</html>
