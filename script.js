@@ -55,7 +55,7 @@ $(document).ready(function(){
 //Code for determining the experience
 	experience=Math.random();
 
-	if(experience<.25){
+	if(experience<=.25){
 		$('#custRemove').remove();
 		$('#contBtn').prop('disabled', false);
 		$('#contBtn').attr('data-target','#legModal');
@@ -64,7 +64,7 @@ $(document).ready(function(){
 		legView=true;
 		regView=false;
 	}
-	if((experience>.25)&&(experience<.5)){
+	if((experience>.25)&&(experience<=.5)){
 		$('#custRemove').remove();
 		$('#contBtn').prop('disabled', false);
 		$('#contBtn').attr('data-target','#regModal');
@@ -73,7 +73,7 @@ $(document).ready(function(){
 		regView=true;
 		legView=false;
 	}
-	if((experience>.5)&&(experience<.75)){
+	if((experience>.5)&&(experience<=.75)){
 		$('#contBtn').attr('data-target','#legModal');
 		experience_num=3;
 		selfCust=true;
