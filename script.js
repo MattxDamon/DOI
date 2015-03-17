@@ -88,7 +88,40 @@ $(document).ready(function(){
 		legView=false;
 	}
 
-	//button enabling
+	// Google Analytics Tracking
+	$('#compName')on('click', function() {
+	  ga('send', 'event', 'input', 'click', 'cust-name');
+	});
+
+	$('#compSlogan')on('click', function() {
+	  ga('send', 'event', 'input', 'click', 'cust-slogan');
+	});
+
+	$('#contBtn').on('click', function() {
+	  ga('send', 'event', 'button', 'click', 'cust-contBtn');
+	});
+
+	$('#userEmail')on('click', function() {
+	  ga('send', 'event', 'input', 'click', 'signup-email');
+	});
+
+	$('#userName').on('click', function() {
+	  ga('send', 'event', 'input', 'click', 'signup-name');
+	});
+
+	$('#downloadBtn').on('click', function() {
+	  ga('send', 'event', 'button', 'click', 'signup-downloadBtn');
+	});
+
+	$('#betaKeyinput').on('click', function() {
+	  ga('send', 'event', 'input', 'click', 'beta-input');
+	});
+
+	$('#downloadIcon').on('click', function() {
+	  ga('send', 'event', 'button', 'click', 'beta-downloadButton');
+	});
+
+	// Button Enabling
 	$('.customizations').change(function()	{
 		if (($('#compName').val()!='')&&($('#compSlogan').val()!='')&&($('#industrySel').val()!="default")&&($('#officeSel').val()!="default")){
 			$('#contBtn').prop('disabled', false);
