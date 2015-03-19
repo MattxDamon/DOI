@@ -199,6 +199,9 @@ ul
 	background-color:#CFCAC6;
 	border-radius: 10px;
 }
+#invalidEmail{
+	color:red;
+}
 
 /* Download Link & Rating */
 

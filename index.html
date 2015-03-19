@@ -46,7 +46,7 @@
 		<div class="row" id="desc">
 			<div class="lure center">
 				<h1>The Real Time Business Strategy Game</h1>
-				<h2>Play for free with your classmates</h2>
+				<h2>Free to Play! Join your classmates</h2>
 				<img class="skidLogo" src="images/skid_logo.png">
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 		<div class="row" id="features">
 			<div class="col-md-10 features col-centered">
 
-				<div id="ind" class="col-md-6 col-sm-6">
+				<div id="ind" class="col-xs-12 col-md-6">
 					<h2>Invest In Industries...</h2>
 		 			<ul>
 		 				<li>Agriculture</li>
@@ -67,7 +67,7 @@
 		 				<li>Invest In New Technology, Rewrite History!</li>
 		 			</ul>
 		 		</div> 				
-		 		<div id="mng" class="col-md-6 col-sm-6">
+		 		<div id="mng" class="col-xs-12 col-md-6">
 	 				<h2>Manage Your Business...</h2>
 	 					<ul>
 			 				<li>Hire Your Managerial Staff</li>
@@ -142,7 +142,7 @@
 					</select>
 				</div>
 				<div class="contPrevbtns">
-					<button type="button" id="downloadBtn" class="cont btn btn-default" onclick="endTimer(); finalMessageDisplay(); sendData();">Sign Up</button>
+					<button type="button" id="downloadBtn" class="cont btn btn-default" onclick="endTimer(); finalMessageDisplay();">Sign Up</button>
 				</div>
 			</div>
 		</div>
@@ -152,7 +152,7 @@
 		<div class="row center" id="beta">
 			<div class="testCodes center col-centered">
 				<hr>
-				<h3>Enter your valid beta key to download the demo:</h3>
+				<h3>Already started your company? Enter your valid beta key to download the demo:</h3>
 				<p>Available for both PC and Macintosh</p>
 				<input type="text" id="betaKeyinput" class="form-control betaKey center" placeholder="Valid Beta Key" aria-describedby="basic-addon1">
 				<h4 id="invalidKey">Invalid Beta Key</h4>
@@ -178,17 +178,15 @@
 	        <h1 class="modal-title" id="myModalLabel">WARNING</h1>
 	      </div>
 	      <div class="modal-body">
-	      		<h3>General:</h3>
-					<p>Before downloading this game players must be aware that gameplay may result in previously unanticipated purchases. Although Dawn of Industry is free to play, there are in-game purchases that will tempt the player to purchase virtual items. These purchases are useless outside of gameplay. Please see the details below for the digital items players will be tempted to purchase using real currency.</p>
+					<h4>Although Dawn of Industry is free to play, there are in-game purchases that will tempt the player to purchase virtual items. Items that players may purhcase include:</h4>
 					 
+					<ul>
+					<li>Decorative houshold items- These items impress politicians, giving the player political influence to support laws or taxes.</li>
 					 
-					<h3>Detailed:</h3>
-					<p>Players will feel the deisre to use real money to purchase items that will impress politicians, giving the player political influence. The political influence can be used to support laws or taxes that allow for the player to keep more of his or her virtual profits.</p>
-					 
-					<p>A real purhacse is also required in order to customize company trucks. The trucks will appear customized in the paying player's dashboard, other players will see the customized trucks of the paying player, and the trucks will increase brand awareness of the paying players company in the mind of virtual consumers.</p>
+					<li>Company truck customization- Truck customization increases brand awareness of the paying player in the minds of both other human players, as well as virtual consumers.<li>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeDivs(); setTimer();">I Understand the Risk of Hidden Costs</button>
+	        <button type="button" class="btn btn-default understandBtn" data-dismiss="modal" onclick="changeDivs(); setTimer();">I Understand the Risk of Hidden Costs</button>
 	      </div>
 	    </div>
 	  </div>
@@ -203,17 +201,16 @@
 	        <h1 class="modal-title" id="myModalLabel">Disclaimer</h1>
 	      </div>
 	      <div class="modal-body">
-	      		<h3>General:</h3>
-					<p>The legal features in Dawn of Industry are taken from real world scenarios but aren't meant to simulate legal procedings in reality. Players will be experience a virtual version of US Law, that does not represent the views of politicians or lawmakers in the Unitied States as of 2015. The views of lawmaking officials and the laws that exist in the game are based on historic events, but are not historically accurate.</p>
+					<h4>The legal and political scenarios in Dawn of Industry aren't meant to simulate or represent historical US law. Particular instances of innaccuracy are listed below:</h4>
 					 
-					<h3>Detailed:</h3>
-					<p>Politcal views expressed by politicians in the game are based on historic events but are not accurate representations of the the views actually held by historic politicians. Dawn of Industry is not meant to be an historically accurate representation of the history of politics.</p>
+					<ul>
+					<li>The initial political resistance for merging two companies isn't a process that exists or has ever existed under US law.</li>
 
-					<p>The creators of this game do not necessarily hold the political views or believe in the political outcomes that occur in game scenarios.</p>
+					<li>Legal procedings limiting the number of investments in specific industries aren't historically accurate, these limitations exist to preserve fair gameplay.</li>
 					 
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal" onclick='changeDivs(); setTimer();'>I Understand</button>
+	        <button type="button" class="btn btn-default understandBtn" data-dismiss="modal" onclick='changeDivs(); setTimer();'>I Understand</button>
 	      </div>
 	    </div>
 	  </div>

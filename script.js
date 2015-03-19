@@ -1,4 +1,4 @@
-// DOI Landing JAVASCRIPT
+// DOI1 Landing JAVASCRIPT
 
 
 // Firebase Functions
@@ -10,12 +10,20 @@ var timerStart;
 var timerEnd;
 var hesitationTime;
 var selfCust;
+var officeSel;
+var industrySel;
+var compName;
+var compSlogan;
 var regView;
 var legView;
 var userEmail;
 
 var experience;
 var experience_num;
+
+var firstPhase=false;
+var modalPhase=false;
+var finalPhase=false;
 
 function setTimer(){
 	timerStart=new Date().getTime();
@@ -33,8 +41,15 @@ function sendData(){
 	    legalview: legView,
 	    regview: regView,
 	    selfcust: selfCust,
+	    industrysel: industrySel,
+	    officesel: officeSel,
+	    compname: compName,
+	    compslogan: compSlogan,
 	    hesitation: hesitationTime,
-	    username: userName
+	    username: userName,
+	    firstphase: firstPhase,
+	    modalphase: modalPhase,
+	    finalphase: finalPhase
   	});
 }
 
@@ -52,19 +67,17 @@ $(document).ready(function(){
 		$('#userName').val('');
 		$('#compEmail').val('');
 
-//Code for determining the experience
-	experience=Math.random();
+//Experience Dependant
 
-	if(experience<=.25){
 		$('#custRemove').remove();
 		$('#contBtn').prop('disabled', false);
 		$('#contBtn').attr('data-target','#legModal');
 		experience_num=1;
 		selfCust=false;
-		legView=true;
 		regView=false;
-	}
-	if((experience>.25)&&(experience<=.5)){
+		legView=true;
+
+/*	if((experience>.25)&&(experience<=.5)){
 		$('#custRemove').remove();
 		$('#contBtn').prop('disabled', false);
 		$('#contBtn').attr('data-target','#regModal');
@@ -87,39 +100,7 @@ $(document).ready(function(){
 		regView=true;
 		legView=false;
 	}
-
-	// Google Analytics Tracking
-	$('#compName')on('click', function() {
-	  ga('send', 'event', 'input', 'click', 'cust-name');
-	});
-
-	$('#compSlogan')on('click', function() {
-	  ga('send', 'event', 'input', 'click', 'cust-slogan');
-	});
-
-	$('#contBtn').on('click', function() {
-	  ga('send', 'event', 'button', 'click', 'cust-contBtn');
-	});
-
-	$('#userEmail')on('click', function() {
-	  ga('send', 'event', 'input', 'click', 'signup-email');
-	});
-
-	$('#userName').on('click', function() {
-	  ga('send', 'event', 'input', 'click', 'signup-name');
-	});
-
-	$('#downloadBtn').on('click', function() {
-	  ga('send', 'event', 'button', 'click', 'signup-downloadBtn');
-	});
-
-	$('#betaKeyinput').on('click', function() {
-	  ga('send', 'event', 'input', 'click', 'beta-input');
-	});
-
-	$('#downloadIcon').on('click', function() {
-	  ga('send', 'event', 'button', 'click', 'beta-downloadButton');
-	});
+*/
 
 	// Button Enabling
 	$('.customizations').change(function()	{
@@ -134,15 +115,36 @@ $(document).ready(function(){
 		}
 	});
 
-	//setting db refs and checking email
+	// Collecting input values
 	$('#userName').change(function()	{
 		userName=$(this).val();
 	});
-
 	$('#userEmail').change(function()	{
-		userEmail=$(this).val();
-		//$('#downloadBtn').prop('disabled', true);
+	userEmail=$(this).val();
 	});
+	$('#compSlogan').change(function()	{
+		compSlogan=$(this).val();
+	});
+	$('#compName').change(function()	{
+		compName=$(this).val();
+	});
+	$('#officeSel').change(function()	{
+		officeSel=$(this).val();
+	});	
+	$('#industrySel').change(function()	{
+		industrySel=$(this).val();
+	});
+
+	// Marking Phase Completions
+	$('#contBtn').click(function(){
+		firstPhase=true;
+	})
+	$('.understandBtn').click(function(){
+		modalPhase=true;
+	})
+	$('#downloadBtn').click(function(){
+		finalPhase=true;
+	})
 
 });
 
@@ -150,15 +152,21 @@ $(document).ready(function(){
 // DOM Manipulation
 
 function finalMessageDisplay(){
-	$('#sign_comp').css("display","inline");
-	$('#desc').css("display","none");
-	$('#features').css("display","none");
-	$('#self_ident').css("display","none");
-	$('#finSignup').css("display","none");
-	$('#beta').css("display","none");
-	$('#links').css("display","none");
-	$('#ratings').css("display","none");
 
+	if ($('#userEmail').includes('@skidmore.edu')){
+		sendData();
+		$('#sign_comp').css("display","inline");
+		$('#desc').css("display","none");
+		$('#features').css("display","none");
+		$('#self_ident').css("display","none");
+		$('#finSignup').css("display","none");
+		$('#beta').css("display","none");
+		$('#links').css("display","none");
+		$('#ratings').css("display","none");
+	}
+	else{
+		$('.contPrevbtns').append("<h4 id='invalidEmail'>School Email Required for Validation Purposes</h4>");
+	}
 }
 
 function changeDivs(){
