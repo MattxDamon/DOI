@@ -36,9 +36,9 @@
 		<div class="row" id="sign_comp">
 			<div class="col-md-10 col-centered signComp center">
 				<h3>Thank You for Signing Up for Dawn of Industry</h3>
-				<p>You will be sent an email by April 25th after the one-week sign up period is over.</p>
+				<p>You will recieve an email by April 25th after the one-week sign up period is over.</p>
 				<p>In this email you may be invited to play the beta version of Dawn of Industry.</p>
-				<p>For questions or concerns please email: <a href=''>concerns_irb@skidmore.edu</a></p>
+				<p>For questions or concerns please email: <a href=''>concerns_irb@skidmore.edu</a>.</p>
 			</div>
 		</div>
 
@@ -132,17 +132,27 @@
 				<div class="customs">
 						<input type="text" id="userName" class="compcust form-control" placeholder="Desired Username" aria-describedby="basic-addon1">
 					</div>
-				<div class="customs">
-						<input type="text" id="userEmail" class="compcust form-control" placeholder="School Email" aria-describedby="basic-addon1">
-				</div>
+
 				<div class="customs">
 					<select class="styleselect" id="institutionSel">
 								  <option value="default">Select Your Institution...</option>
 								  <option value="skidmore">Skidmore College</option>
 					</select>
 				</div>
+				<div class="customs">
+						<input type="text" id="userEmail" class="compcust form-control" placeholder="School Email Required" aria-describedby="basic-addon1">
+				</div>
+				<div class="customs">
+					<select class="styleselect" id="classyearSel">
+								  <option value="default">Select Your Class Year...</option>
+								  <option value="freshman">Freshman</option>
+								  <option value="sophomore">Sophomore</option>
+								  <option value="junior">Junior</option>
+								  <option value="senior">Senior</option>
+					</select>
+				</div>				
 				<div class="contPrevbtns">
-					<button type="button" id="downloadBtn" class="cont btn btn-default" onclick="endTimer(); finalMessageDisplay();">Sign Up</button>
+					<button type="button" id="downloadBtn" class="cont btn btn-default" onclick="endTimer(); finalMessageDisplay(); sendData();">Sign Up</button>
 				</div>
 			</div>
 		</div>

@@ -10,10 +10,10 @@ var timerStart;
 var timerEnd;
 var hesitationTime;
 var selfCust;
-var officeSel;
-var industrySel;
-var compName;
-var compSlogan;
+var officeSel="null";
+var industrySel="null";
+var compName="null";
+var compSlogan="null";
 var regView;
 var legView;
 var userEmail;
@@ -36,20 +36,20 @@ function endTimer(){
 
 function sendData(){
 	ref.push({
-		experience: experience_num,
-	    email: userEmail,
-	    legalview: legView,
-	    regview: regView,
-	    selfcust: selfCust,
-	    industrysel: industrySel,
-	    officesel: officeSel,
-	    compname: compName,
-	    compslogan: compSlogan,
-	    hesitation: hesitationTime,
-	    username: userName,
-	    firstphase: firstPhase,
-	    modalphase: modalPhase,
-	    finalphase: finalPhase
+		aexperience: experience_num,
+	    bemail: userEmail,
+	    clegalview: legView,
+	    dregview: regView,
+	    eselfcust: selfCust,
+	    findustrysel: industrySel,
+	    gofficesel: officeSel,
+	    hcompname: compName,
+	    icompslogan: compSlogan,
+	    jhesitation: hesitationTime,
+	    kusername: userName,
+	    lfirstphase: firstPhase,
+	    mmodalphase: modalPhase,
+	    nfinalphase: finalPhase
   	});
 }
 
@@ -110,10 +110,15 @@ $(document).ready(function(){
 	});
 
 	$('.finalSignup').change(function()	{
-		if (($('#userName').val()!='')&&($('#userEmail').val()!='')&&($('#institutionSel').val()!="default")) {
+		if (($('#userName').val()!='')&&($('#userEmail').val()!='')&&($('#institutionSel').val()!="default")&&($('#classyearSel').val()!="default")) {
 			$('#downloadBtn').prop('disabled', false);
 		}
 	});
+
+	$('#institutionSel').change(function()	{
+		$('#userEmail').val('@skidmore.edu');
+	});
+
 
 	// Collecting input values
 	$('#userName').change(function()	{
@@ -152,9 +157,6 @@ $(document).ready(function(){
 // DOM Manipulation
 
 function finalMessageDisplay(){
-
-	if ($('#userEmail').includes('@skidmore.edu')){
-		sendData();
 		$('#sign_comp').css("display","inline");
 		$('#desc').css("display","none");
 		$('#features').css("display","none");
@@ -163,10 +165,6 @@ function finalMessageDisplay(){
 		$('#beta').css("display","none");
 		$('#links').css("display","none");
 		$('#ratings').css("display","none");
-	}
-	else{
-		$('.contPrevbtns').append("<h4 id='invalidEmail'>School Email Required for Validation Purposes</h4>");
-	}
 }
 
 function changeDivs(){
