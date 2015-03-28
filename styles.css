@@ -16,11 +16,6 @@
 	border: 1px solid red !important;
 }*/
 
-.lure{
-	margin-top:0px;
-	color: #FFFFFF;
-}
-
 .everything{
 	background-position: left top;
 	background-image:url("https://zoelorimer.files.wordpress.com/2013/01/times-square-january-1938.jpg");
@@ -58,10 +53,6 @@
 	margin-top:0px;
 	position:fixed;
 }
-.mainMiniLogo{
-	display:none;
-	width:30%;
-}
 .mainlogo{
 	width:85%;
 }
@@ -92,11 +83,10 @@
 	margin-top:5px;
 	font-size:25px;
 	opacity: .98;
-	height:325px;
+	height:300px;
 	background-color:#D6C9A7;
-	border-radius:20px;
+	border-radius:10px;
 	margin-bottom:5px;
-	position:relative;
 }
 .features h2{
 	margin-top:0px;
@@ -230,28 +220,42 @@ ul
 }
 
 /*mobile styling*/
-@media (max-width: 765px){
+@media (max-width: 992px){
 	.features{
-		height:85%;
+		height:365px;
 	}
 }
+@media (max-width: 765px){
+	.features{
+		height:560px;
+	}
+	.container{
+		width: 580px;
+	}	
+}
 @media (max-width: 500px) {
+		.lure h1{
+			font-weight:20px;
+		}
+		.lure h2{
+			font-weight:18px;
+		}
+		.logocontainer{
+			margin-left:0px;
+			margin-right:0px;
+		}
+		.mainLogo{
+			width:100%;
+		}
+		.container{
+			width:275px;
+		}
 		.ratings{
-			width:60%;
+			width:50%;
 		}
 		.downloadLinks{
 			margin-left:0%;
 			margin-top:0px;
-		}
-		.osxIcon{
-			width:50%;
-			float:left;
-			margin-left:0%;
-		}
-		.windIcon{
-			width:50%;
-			float:right;
-			margin-top:7%;
 		}
 		.everything{
 			padding-right:0px;
@@ -266,6 +270,6 @@ ul
 			margin-left:10%;
 		}
 		.features{
-			height:90%;
+			height:680px;
 		}
 	}

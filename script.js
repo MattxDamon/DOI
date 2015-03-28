@@ -116,7 +116,7 @@ $(document).ready(function(){
 	});
 
 	$('#institutionSel').change(function()	{
-		$('#userEmail').val('@skidmore.edu');
+		$('#userEmail').attr('placeholder','Skidmore Email Required');
 	});
 
 
