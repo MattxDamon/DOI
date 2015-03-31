@@ -218,6 +218,9 @@ ul
 	color:red;
 	display:none;
 }
+#sources{
+	font-size:10px;
+}
 
 /*mobile styling*/
 @media (max-width: 992px){
