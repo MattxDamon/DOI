@@ -179,8 +179,11 @@ ul
 	display:none;
 }
 .finalSignup{
-	background-color:#CFCAC6;
+	background-color:#F0F0F0;
 	border-radius: 10px;
+}
+.finishAbove{
+	display:none;
 }
 #sign_comp{
 	display:none;
@@ -220,6 +223,7 @@ ul
 }
 #sources{
 	font-size:10px;
+	color:gray;
 }
 
 /*mobile styling*/
@@ -274,5 +278,12 @@ ul
 		}
 		.features{
 			height:680px;
+		}
+		.finalSignup{
+			height:500px;
+		}
+		.finishAbove{
+			display:inline;
+			margin-top:200px;
 		}
 	}

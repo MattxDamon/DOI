@@ -5,7 +5,7 @@
 
 var ref= new Firebase("https://dawn-of-industry.firebaseio.com/visitors");
 
-var userName;
+var classYear;
 var timerStart;
 var timerEnd;
 var hesitationTime;
@@ -46,7 +46,7 @@ function sendData(){
 	    hcompname: compName,
 	    icompslogan: compSlogan,
 	    jhesitation: hesitationTime,
-	    kusername: userName,
+	    kclassyear: classYear,
 	    lfirstphase: firstPhase,
 	    mmodalphase: modalPhase,
 	    nfinalphase: finalPhase
@@ -64,7 +64,6 @@ $(document).ready(function(){
 		$('#downloadBtn').prop('disabled', true);
 		$('#compName').val('');
 		$('#compSlogan').val('');
-		$('#userName').val('');
 		$('#compEmail').val('');
 
 //Experience Dependant
@@ -110,7 +109,7 @@ $(document).ready(function(){
 	});
 
 	$('.finalSignup').change(function()	{
-		if (($('#userName').val()!='')&&($('#userEmail').val()!='')&&($('#institutionSel').val()!="default")&&($('#classyearSel').val()!="default")) {
+		if (($('#userEmail').val()!='')&&($('#institutionSel').val()!="default")&&($('#classyearSel').val()!="default")) {
 			$('#downloadBtn').prop('disabled', false);
 		}
 	});
@@ -121,12 +120,12 @@ $(document).ready(function(){
 
 
 	// Collecting input values
-	$('#userName').change(function()	{
-		userName=$(this).val();
-	});
 	$('#userEmail').change(function()	{
 	userEmail=$(this).val();
 	});
+	$('#classyearSel').change(function()	{
+	classYear=$(this).val();
+	});	
 	$('#compSlogan').change(function()	{
 		compSlogan=$(this).val();
 	});
